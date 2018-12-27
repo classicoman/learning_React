@@ -13,10 +13,29 @@
     <div id="root"></div>
     <script type="text/babel">
 
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
-      );
+
+/* This is a component created using JSX */
+/*class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div>
+        Hello {this.props.name} (with JSX)
+      </div>
+    );
+  }
+}*/
+
+			
+/* And this is the same component without using JSX */
+function HelloMessage(props) {
+	return <div>Hello {props.name}  (without JSX)</div>;		
+}
+
+ReactDOM.render(
+	/* This kind of element, similar to XML, is called JSX */
+  <HelloMessage name="Toni" />,
+  document.getElementById('root')
+);
 
     </script>
   </body>
