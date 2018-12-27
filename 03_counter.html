@@ -12,7 +12,10 @@
   <body>
       <p>Implementing a Counter using React's <i>State</i> concept and JS function <i>setInterval()</i></p>
 			<div id="root"></div>
-    <script type="text/babel">
+		
+
+		<script type="text/babel">
+
 
 
 class Contador extends React.Component {
@@ -29,6 +32,11 @@ class Contador extends React.Component {
       () => this.incrementa(),
       1000
     );
+  }
+
+	/* En desmuntar el component -> allibera recursos */
+	componentWillUnmount() {
+    clearInterval(this.timerID);
   }
 	
 /* Function that is called by setInterval every time an interval finishes */
@@ -52,6 +60,7 @@ ReactDOM.render(
 	< Contador />,
 	document.getElementById('root')
 );
+
 
 
 		</script>
