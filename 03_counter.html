@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+      <p>Implementing a Counter using React's <i>State</i> concept and JS function <i>setInterval()</i></p>
+			<div id="root"></div>
+    <script type="text/babel">
+
+
+class Contador extends React.Component {
+	
+  constructor(props) {
+    super(props);
+		{/* Això és un COMENTARI DE REACT */}
+    this.state = {compte:0};
+  }
+	 
+  //Quan es munta el component, s'estableix el setInterval
+	componentDidMount() {
+    this.timerID = setInterval(
+      () => this.incrementa(),
+      1000
+    );
+  }
+	
+/* Function that is called by setInterval every time an interval finishes */
+	incrementa() {
+	  this.setState({compte: this.state.compte+1 });
+  }
+	
+	
+  render() {
+    return (
+      <div>
+        <h1>Això és un comptador</h1>
+        <h2>{this.state.compte}</h2>
+      </div>
+    );
+  }
+}
+
+
+ReactDOM.render(
+	< Contador />,
+	document.getElementById('root')
+);
+
+
+		</script>
+  </body>
+</html>
