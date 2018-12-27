@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+			/* COMPONENT Welcome */
+			function Welcome(props) {
+				return <h1>Hello, {props.name}</h1>;
+			}
+
+			/* El COMPONENT  App  utilitza el COMPONENT Welcome */
+			function App() {
+  			return (
+    			<div>
+      			<Welcome name="Peter Sagan" />
+      			<Welcome name="Enric Mas" />
+      			<Welcome name="Lluis Mas" />
+    			</div>
+				);
+			}
+
+/* Render */	
+ReactDOM.render(
+	<App />,
+	document.getElementById('root')
+);
+
+    </script>
+  </body>
+</html>

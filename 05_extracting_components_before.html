@@ -1,0 +1,71 @@
+<!--  https://reactjs.org/docs/components-and-props.html -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+			function formatDate(date) {
+				return date.toLocaleDateString();
+			}
+
+		/* This code is correct
+		   But we want to be able to reuse some elements
+			 */
+		function Comment(props) {
+			return (
+				<div className="Comment">
+					<div className="UserInfo">
+						<img className="Avatar"
+							src={props.author.avatarUrl}
+							alt={props.author.name}
+						/>
+						<div className="UserInfo-name">
+							{props.author.name}
+						</div>
+					</div>
+					<div className="Comment-text">
+						{props.text}
+					</div>
+					<div className="Comment-date">
+						{formatDate(props.date)}
+					</div>
+				</div>
+			);
+		}
+
+			/* Define an ELEMENT */
+			const comment = {
+				date: new Date(),
+				text: 'Esto no funsiona',
+				author: {
+					name: 'Bob Esponja',
+					avatarUrl: 'https://www.gannett-cdn.com/media/2018/01/02/USATODAY/usatsports/img_wtw_spongebob01_0105_1_1_nc9j38e8_69782464.jpg?width=1080&quality=50'
+				}
+
+			}
+
+			/* Render the ELEMENT using COMPONENTS */
+			ReactDOM.render(
+				<Comment
+					date={comment.date}
+					text={comment.text}
+					author={comment.author}
+				/>,
+				document.getElementById('root')
+			);
+
+    </script>
+  </body>
+</html>
