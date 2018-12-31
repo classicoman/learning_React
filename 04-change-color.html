@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>04-change-color</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <p>Change the color of a square</p>
+    <div id="square" style="height:50px; width:50px"></div>
+    <div id="buttons"></div>
+    <script type="text/babel">
+    
+
+
+class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {color: props.color};      
+    
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  //xtoni  Funció Callback de l'event
+  handleClick() {
+    document.getElementById("#square").style.color = this.state.color;
+  }
+
+  //Empra state per a indicar el color del botó
+  render() {
+    return (
+      <button onClick={this.handleClick}> {this.state.color} </button>
+    );
+  }
+}
+
+//No empram JSX, amb una funció basta.
+function Buttons(props) {
+    return (
+        <Button color="red" />
+        <Button color="green" />
+        <Button color="blue" />
+    );
+}
+
+
+//Render of the Buttons
+ReactDOM.render(
+  <Buttons />
+  <Square />,
+  document.getElementById('buttons')
+);
+
+
+
+    </script>
+  </body>
+</html>

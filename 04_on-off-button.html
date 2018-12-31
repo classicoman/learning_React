@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <p>Espitja aquest botó per anar canviant el seu estat</p>
+    <div id="boto"></div>
+    <script type="text/babel">
+
+
+class Toggle_Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {estaOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  //xtoni  Funció Callback de l'event
+  handleClick() {
+    this.setState(state => ({
+      //Fer toggle entre  true  i  false
+      estaOn: !state.estaOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}> {this.state.estaOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle_Button />,
+  document.getElementById('boto')
+);
+
+
+
+    </script>
+  </body>
+</html>

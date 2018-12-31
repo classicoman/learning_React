@@ -1,7 +1,8 @@
 #TODO LIST
 - [x] Implement a Counter
-- [ ] Follow the next point of the tutorial
-- [ ] etc..
+- [x] Implement some kind of game using Events: ON-OFF Button
+- [ ] 04-change-color.html
+- [ ] etc.. following the Tutorials
 
 # learning_React
 Some codes that I have implemented to learn React
@@ -27,7 +28,8 @@ JSX uses ES6 classes.
 Implementing a Counter in React, using <i>setInterval</i> function, JSX and the concept of <i>State</i> and <a href="https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-classls">LifeCycle</a> in React.
 * <a href="https://reactjs.org/docs/state-and-lifecycle.html">More about State and Lifecycle</a>
 
-### 04-implement some kind of game using Events
+### 04_on-off-button.html
+Taken from the tutorial.
 * <a href="https://reactjs.org/docs/handling-events.html">More about Events</a>
 
-
+### 04-change-color.html
