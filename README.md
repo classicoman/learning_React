@@ -1,3 +1,8 @@
+#TODO LIST
+- [x] Implement a Counter
+- [ ] Follow the next point of the tutorial
+- [ ] etc..
+
 # learning_React
 Some codes that I have implemented to learn React
 
