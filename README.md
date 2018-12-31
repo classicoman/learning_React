@@ -19,7 +19,7 @@ JSX uses ES6 classes.
 
 
 ### 03-counter.html
-Implementing a Counter in React, using <i>setInterval</i> function, JSX and the concept of <i>State</i> and <a href="https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class">LifeCycle</a> in React.
+Implementing a Counter in React, using <i>setInterval</i> function, JSX and the concept of <i>State</i> and <a href="https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-classls">LifeCycle</a> in React.
 * <a href="https://reactjs.org/docs/state-and-lifecycle.html">More about State and Lifecycle</a>
 
 
